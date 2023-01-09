@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+    <style>
+        body{
+            background-color: rgb(48, 48, 47);
+        }
+        .togle{
+            background-color: rgb(93, 161, 239);
+            height: 20px;
+            width: 40px;
+            border-radius: 30px;
+            padding: 2px 2px;
+        }
+        .circle{
+            background-color: #ffffff;
+            height: 19px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        .right{
+            position: absolute;
+            left: 28px;
+        }
+        .left{
+            position: absolute;
+            left: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="togle" id="togle">
+        <div class="circle left " id="circle">
+        </div>
+    </div>
+</body>
+<script>
+    const togle = document.getElementById("togle");
+    const circle = document.getElementById("circle");
+
+    const changePackeg = ()=>{
+        if(circle.classList.contains("left")){
+            circle.classList.remove("left");
+            circle.classList.add("right");
+        }else{
+            circle.classList.remove("right");
+            circle.classList.add("left");
+        }
+    }
+
+    togle.addEventListener("click",changePackeg);
+
+</script>
+</html>
